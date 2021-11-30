@@ -1,0 +1,44 @@
+@font-face {
+  font-family: IranSans;
+  src: url("../fonts/IranSans.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: IranYekan;
+  src: url("../fonts/iranyekanwebregularfanum.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --font-primary: "IranSans", "tahoma", sans-serif;
+  --font-secondary: "IranYekan", "tahoma", sans-serif;
+  --color-primary: #a43f49;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+
+  @media only screen and (min-width: 1700px) {
+    font-size: 75%;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    font-size: 62.5%;
+  }
+
+  @media only screen and (max-width: 900px) {
+    font-size: 56.25%;
+  }
+
+  @media only screen and (max-width: 600px) {
+    font-size: 50%;
+  }
+}

@@ -1,0 +1,63 @@
+.skills {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 1.5rem;
+  row-gap: 2rem;
+
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.skill {
+  padding: 3.5rem;
+  background-color: rgba(250, 250, 250, 0.1);
+  transition: all 0.4s;
+
+  &__icon {
+    width: 7rem;
+    height: 7rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+    &--1 {
+      background-image: url(../img/first-white-icon.png);
+    }
+
+    &--2 {
+      background-image: url(../img/second-white-icon.png);
+    }
+
+    &--3 {
+      background-image: url(../img/third-white-icon.png);
+    }
+
+    &--4 {
+      background-image: url(../img/fourth-white-icon.png);
+    }
+  }
+
+  &:hover {
+    background-color: #fff;
+    color: #212529;
+
+    .skill__icon {
+      &--1 {
+        background-image: url(../img/first-main-icon.png);
+      }
+
+      &--2 {
+        background-image: url(../img/second-main-icon.png);
+      }
+
+      &--3 {
+        background-image: url(../img/third-main-icon.png);
+      }
+
+      &--4 {
+        background-image: url(../img/fourth-main-icon.png);
+      }
+    }
+  }
+}

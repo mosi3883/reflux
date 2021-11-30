@@ -1,0 +1,18 @@
+.section {
+  padding: 6.5rem;
+  &:not(:last-child) {
+    border-bottom: 3px solid rgba(250, 250, 250, 0.25);
+  }
+
+  @media only screen and (max-width: 900px) {
+    padding: 5rem 4rem;
+  }
+
+  @media only screen and (max-width: 600px) {
+    padding: 3rem 2rem;
+  }
+}
+
+// .section-posts {
+//   padding: 8rem;
+// }
