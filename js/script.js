@@ -70,26 +70,24 @@ document.querySelector(".nav__nav").addEventListener("click", function (e) {
 const allSections = document.querySelectorAll(".section");
 
 const obsCallback = function (entries, obs) {
-  //console.log(entries);
-  const [entry] = entries;
-  //console.log("running");
-  //console.log(entry);
-  if (entry.isIntersecting) {
-    //console.log(entry.target.id);
-    const id = entry.target.id;
-    if (!id || id === "posts") return;
-    // console.log("id ", id);
-    const target = document
-      .querySelector(`.nav__link[href='#${id}']`)
-      .closest(".nav__item");
-    activeNav(target, false);
-  }
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      //console.log(entry.target.id);
+      const id = entry.target.id;
+      if (!id || id === "posts") return;
+      // console.log("id ", id);
+      const target = document
+        .querySelector(`.nav__link[href='#${id}']`)
+        .closest(".nav__item");
+      activeNav(target, false);
+    }
+  });
 };
 const options = {
   root: null,
-  // threshold: 0.1,
-  threshold: 0,
-  rootMargin: "0px 0px -100px 0px",
+  threshold: 0.2,
+  // threshold: 0,
+  rootMargin: "0px 0px 0px 0px",
 };
 const observer = new IntersectionObserver(obsCallback, options);
 
