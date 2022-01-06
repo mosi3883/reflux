@@ -48,9 +48,7 @@ const activeNav = function (clicked, scroll) {
   // smooth scroll
   //console.log(clicked);
   if (scroll) {
-    const target = document.querySelector(
-      clicked.querySelector(".nav__link").getAttribute("href")
-    );
+    const target = document.querySelector(clicked.querySelector(".nav__link").getAttribute("href"));
     target.scrollIntoView({ behavior: "smooth" });
   }
 
@@ -76,9 +74,7 @@ const obsCallback = function (entries, obs) {
       const id = entry.target.id;
       if (!id || id === "posts") return;
       // console.log("id ", id);
-      const target = document
-        .querySelector(`.nav__link[href='#${id}']`)
-        .closest(".nav__item");
+      const target = document.querySelector(`.nav__link[href='#${id}']`).closest(".nav__item");
       activeNav(target, false);
     }
   });

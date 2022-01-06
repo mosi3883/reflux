@@ -1,12 +1,14 @@
 @mixin nav-active {
   background-color: #fff;
-  color: var(--color-primary);
+  color: var(--color-primary-dark);
 }
 .nav {
   &__content {
     width: 28rem;
     position: fixed;
-    padding: 1rem 0;
+    z-index: 100;
+    padding: 0;
+
     background-color: var(--color-primary);
     min-height: 100vh;
     overflow-y: auto;
@@ -26,14 +28,32 @@
     // @media only screen and (max-width: 800px) {
     //   right: 0;
     // }
+    @media only screen and (max-width: 900px) {
+      display: flex;
+      width: 100%;
+      top: auto;
+      min-height: auto;
+    }
   }
-  @media only screen and (max-width: 900px) {
-    display: none;
-  }
+  // @media only screen and (max-width: 900px) {
+  //   display: none;
+  // }
 
   &__photo-box {
     width: 60%;
     margin: 4rem auto;
+
+    @media only screen and (max-width: 1400px) {
+      margin: 3rem auto;
+    }
+
+    @media only screen and (max-width: 1200px) {
+      margin: 2.5rem auto;
+    }
+
+    @media only screen and (max-width: 900px) {
+      display: none;
+    }
   }
 
   &__photo {
@@ -52,10 +72,23 @@
   &__nav {
     list-style: none;
     display: block;
+    @media only screen and (max-width: 900px) {
+      display: flex;
+      width: 100%;
+    }
+  }
+
+  &__author {
+    @media only screen and (max-width: 900px) {
+      display: none;
+    }
   }
 
   &__item {
     display: block;
+    @media only screen and (max-width: 900px) {
+      flex: 0 0 25%;
+    }
     &:last-child {
       .nav__link {
         &:link,
@@ -72,13 +105,25 @@
       display: block;
       text-decoration: none;
       color: #fff;
-      padding: 2.5rem;
+      padding: 2.2rem;
       text-align: center;
       border-bottom: 1px solid rgba(251, 143, 163, 0.3);
       font-size: 1.6rem;
       transition: all 0.25s ease-in-out;
       font-family: var(--font-secondary);
       // font-family: var(--font-primary);
+
+      @media only screen and (max-width: 1400px) {
+        padding: 2rem;
+      }
+
+      @media only screen and (max-width: 1100px) {
+        padding: 1.5rem;
+      }
+
+      @media only screen and (max-width: 900px) {
+        border: none;
+      }
     }
 
     &:hover,

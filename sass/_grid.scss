@@ -4,8 +4,9 @@
 }
 
 .main {
-  margin-right: 33rem; // 28rem + 5rem
+  margin-right: 29rem; // 28rem + 2rem
   padding: 3rem 2rem;
+
   @media only screen and (max-width: 900px) {
     margin-right: 0;
   }
